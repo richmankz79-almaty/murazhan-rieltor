@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Муратжан Риэлтор · АН «AVENUE»</title>
+    <style>
+        /* ----- ОБНУЛЕНИЕ И БАЗА ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ----- ШАПКА ----- */
+        .header {
+            background: #1a3a5c;
+            color: white;
+            padding: 20px 0 15px 0;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .header .sub-title {
+            font-size: 20px;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-top: 2px;
+        }
+        .header .agency {
+            font-size: 18px;
+            opacity: 0.85;
+            margin-top: 8px;
+            font-weight: 300;
+        }
+
+        /* ----- ГЕРОЙ (ФОН ИНТЕРЬЕРА) ----- */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 92, 0.75), rgba(26, 58, 92, 0.85)),
+                        url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=600&fit=crop&crop=center') center/cover no-repeat;
+            text-align: center;
+            padding: 80px 20px 70px 20px;
+            border-bottom: 4px solid #ffd700;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+        .hero .container {
+            width: 100%;
+        }
+        .hero h2 {
+            font-size: 40px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+        }
+        .hero h2 span {
+            color: #ffd700;
+        }
+        .hero .sub-text {
+            font-size: 22px;
+            color: #f0f0f0;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .hero .phone-big {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffd700;
+            display: block;
+            margin: 20px 0;
+            text-decoration: none;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .hero .phone-big:hover {
+            color: #fff;
+        }
+        .btn-call {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a3a5c;
+            font-size: 22px;
+            font-weight: 700;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .btn-call:hover {
+            background: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+        }
+        .hero .hint {
+            margin-top: 20px;
+            color: #ddd;
+            font-size: 16px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        }
+
+        /* ----- УСЛУГИ ----- */
+        .services {
+            background: #f9f9f9;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .services h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #1a3a5c;
+        }
+        .service-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .service-item {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            font-size: 20px;
+            font-weight: 600;
+            min-width: 150px;
+            border: 2px solid #e0e0e0;
+            transition: transform 0.3s;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+        }
+        .service-item span {
+            display: block;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* ----- О РИЭЛТОРЕ ----- */
+        .about {
+            background: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .about h3 {
+            font-size: 28px;
+            color: #1a3a5c;
+            margin-bottom: 15px;
+        }
+        .about p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            color: #444;
+        }
+        .about .agency {
+            font-weight: 700;
+            color: #1a3a5c;
+            font-size: 20px;
+        }
+
+        /* ----- КОНТАКТЫ ----- */
+        .contact {
+            background: #1a3a5c;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .contact h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .contact .phone {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffd700;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+        }
+        .contact .phone:hover {
+            color: #fff;
+        }
+        .contact .info {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* ----- ФУТЕР ----- */
+        .footer {
+            background: #0f2638;
+            color: #aaa;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        /* ----- АДАПТИВ (телефоны) ----- */
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 26px;
+            }
+            .header .sub-title {
+                font-size: 17px;
+            }
+            .header .agency {
+                font-size: 15px;
+            }
+            .hero {
+                padding: 50px 20px 40px 20px;
+                min-height: 400px;
+            }
+            .hero h2 {
+                font-size: 28px;
+            }
+            .hero .sub-text {
+                font-size: 18px;
+            }
+            .hero .phone-big {
+                font-size: 30px;
+            }
+            .btn-call {
+                font-size: 18px;
+                padding: 14px 35px;
+            }
+            .service-item {
+                padding: 20px 25px;
+                font-size: 17px;
+                min-width: 120px;
+            }
+            .contact .phone {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ШАПКА ===== -->
+    <header class="header">
+        <div class="container">
+            <h1>МУРАТЖАН</h1>
+            <div class="sub-title">Риэлтор</div>
+            <div class="agency">Агентство недвижимости «AVENUE»</div>
+        </div>
+    </header>
+
+    <!-- ===== ГЛАВНЫЙ БЛОК (фон интерьера) ===== -->
+    <section class="hero">
+        <div class="container">
+            <h2>Найду <span>идеальное</span> жильё</h2>
+            <p class="sub-text">Аренда · Покупка · Продажа</p>
+            <a href="tel:+77071689889" class="phone-big">📞 +7 (707) 168-98-89</a>
+            <br>
+            <a href="tel:+77071689889" class="btn-call">📲 ПОЗВОНИТЬ СЕЙЧАС</a>
+            <p class="hint">Звонок бесплатный · Работаю 24/7</p>
+        </div>
+    </section>
+
+    <!-- ===== УСЛУГИ ===== -->
+    <section class="services">
+        <div class="container">
+            <h3>Что я предлагаю</h3>
+            <div class="service-grid">
+                <div class="service-item">
+                    <span>🏘️</span>
+                    Аренда
+                </div>
+                <div class="service-item">
+                    <span>🏠</span>
+                    Покупка
+                </div>
+                <div class="service-item">
+                    <span>📄</span>
+                    Продажа
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== О РИЭЛТОРЕ ===== -->
+    <section class="about">
+        <div class="container">
+            <h3>Обо мне</h3>
+            <p>
+                Меня зовут <strong>Муратжан</strong>. Я профессиональный риэлтор с опытом работы на рынке недвижимости Казахстана.
+            </p>
+            <p>
+                Работаю в агентстве <span class="agency">«AVENUE»</span>. Помогаю клиентам быстро и выгодно решить вопросы с арендой, покупкой и продажей жилья.
+            </p>
+            <p style="font-size: 16px; color: #777;">
+                ⭐ Честно · Надёжно · Без посредников
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== КОНТАКТЫ ===== -->
+    <section class="contact">
+        <div class="container">
+            <h3>📩 Свяжитесь со мной</h3>
+            <a href="tel:+77071689889" class="phone">📞 +7 (707) 168-98-89</a>
+            <p class="info">📧 Email: muratkz79@mail.ru</p>
+            <p class="info">📍 Агентство недвижимости «AVENUE»</p>
+            <p style="margin-top: 20px; font-size: 16px; opacity: 0.8;">
+                Звоните в любое время — всегда на связи!
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Муратжан Риэлтор · АН «AVENUE»</p>
+            <p style="margin-top: 5px; font-size: 12px;">Сайт создан для удобства клиентов</p>
+        </div>
+    </footer>
+
+</body>
+</html>
